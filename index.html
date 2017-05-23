@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- Last Name: Chandru, First Name: Jeyanth 
+UTA ID : 1001359339
+Project Name: Project 1
+Due Date : October 19, 2016-->
+<html lang="en">
+  <head>
+    <title>A Weather Web Application</title>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="SHORTCUT ICON" href="icon.png">
+  </head>
+  <body>
+    <section class="formContainer text-center">
+      <form id="weatherInfo" name="weatherInfo">
+         <label for="form-input">City : </label>
+         <section class="inputContainer">
+         <input type="text" name="form-input" id="form-input" class="form-input" placeholder = "Enter the City Name" required autocomplete="off" />
+         <input type="submit" class="displayInfo" id="displayInfo" value="Display Info"/>
+         <button class="locationInfo"><a href="webmash.html">Location Info (Reverse Geocode)</a></button>
+         </section>
+      </form>
+    </section>
+    <div id="output" class="outputContainer">&nbsp;</div>
+  </body>
+
+    <script id="weatherOutput" type="text/x-handlebars-template">
+    <h2 class="text-center">The Weather Information was updated at {{dt}}</h2>
+      <center>
+        <table class="displayWeather" cellpadding="5" cellspacing="1" width="400">
+        <caption>{{#if name}}Weather for {{name}}{{/if}} ,{{#sys}}{{country}}{{/sys}}</caption>
+          {{#wind}}
+          <tr>
+            <td>Wind</td>
+            <td>Deg : {{deg}}<br />Wind Speed : {{speed}}</td>
+          </tr>
+          {{/wind}}
+          <tr>
+            <td>Weather:</td>
+            <td>
+              <span class="text-captilize">{{#weather}}{{description}}{{/weather}} </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Coordinates
+            </td>
+            {{#coord}}
+            <td>Latitude: {{lat}} <br>Longitude: {{lon}}</td>
+            {{/coord}}
+          </tr>
+          {{#sys}}
+          <tr>
+            <td>Sunrise:</td>
+            <td>
+              {{sunrise}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sunset:
+            </td>
+            <td>
+              {{sunset}}
+            </td>
+          </tr>
+          {{/sys}}
+          {{#main}}
+          <tr>
+            <td>
+              Pressure:
+            </td>
+            <td>
+              {{pressure}} hpa (Hectopascal)
+            </td>
+          </tr>  
+          <tr>
+            <td>
+              Humidity:
+            </td>
+            <td>
+              {{humidity}}%
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Temperature:
+            </td>
+            <td>
+              {{temp}} &deg;C
+            </td>
+          </tr>     
+          <tr>
+            <td>
+              Min Temp:
+            </td>
+            <td>
+              {{temp_min}} &deg;C
+            </td>
+          </tr> 
+          <tr>
+            <td>
+              Max Temp:
+            </td>
+            <td>
+              {{temp_max}} &deg;C
+            </td>
+          </tr> 
+          {{/main}}
+          <tr>
+          <td>
+            Visibility:
+          </td>
+            <td>
+              {{#clouds}}{{all}}{{/clouds}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Advice For User:
+            </td>
+            <td>
+            {{#weather}}{{main}}{{/weather}}
+            </td>
+          </tr> 
+              
+        </table>
+      </center>
+    </script>
+    <script type="text/javascript" src="weather.js"></script>
+</html>

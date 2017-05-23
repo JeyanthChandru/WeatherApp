@@ -1,0 +1,80 @@
+body {
+    padding: 10px;
+    font-family: "Helvetica Neue",Helvetica-,Arial,sans-serif;
+}
+
+label{
+	font-size: 15px;
+	font-family: sans-serif;
+	vertical-align: middle;
+}
+
+fieldset{
+    width: 600px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.form-align{
+    padding: 5px;
+}
+
+.displayInlineBlock{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.form-align .form-label{
+    width: 50%;
+}
+
+.formContainer{
+	padding: 20px;
+}
+
+.formContainter > form{
+	text-align: left;
+}
+
+.displayInfo{
+    background: #286090;
+    border: 1px solid #204d74;
+    color: #fff;
+    padding: 11px 10px 10px;
+    border-radius: 3px 3px 3px 3px;
+    margin-right: 10px;
+    font-size: 15px;	
+}
+.form-input {
+    padding: 20px;
+    border: 1px solid #bbb;
+    font-size: 15px;
+    border-radius: 3px 0 0 3px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.displayWeather{
+    background: #ccc;
+}
+
+.displayWeather tr {
+    background: #fff;
+}
+
+.displayWeather tr:nth-child(odd) {
+    background: #eee;
+}
+
+td:hover{
+    background: blue;
+    color: white;
+}

@@ -1,0 +1,79 @@
+body {
+    padding: 0px;
+    font-family: "Helvetica Neue",Helvetica-,Arial,sans-serif;
+}
+
+caption{
+	font-size: 20px;
+	font-weight: bold;
+}
+label{
+	display: inline-block;
+	font-size: 30px;
+	font-family: sans-serif;
+	vertical-align: middle;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.displayWeather{
+	background: #ccc;
+}
+
+.displayWeather tr {
+    background: #fff;
+}
+
+.displayWeather tr:nth-child(even) {
+    background: #eee;
+}
+
+.formContainer{
+	padding: 25px;
+}
+
+.formContainter > form{
+	text-align: left;
+}
+.inputContainer{
+	display: inline-block;
+	vertical-align: middle;
+}
+.inputContainer input{
+	float: left;
+}
+.displayInfo{
+    background: #286090;
+    border: 1px solid #204d74;
+    color: #fff;
+    padding: 11px 10px 10px;
+    margin-right: 10px;
+    border-radius: 0px 3px 3px 0px;
+    font-size: 16px;	
+}
+.locationInfo{
+    background: #286090;
+    border: 1px solid #204d74;
+    color: #fff;
+    padding: 11px 10px 10px;
+    margin-right: 10px;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 16px;	
+}
+.form-input {
+    padding: 11px;
+    border: 1px solid #bbb;
+    font-size: 15px;
+    border-radius: 3px 0 0 3px;
+    border-right: 0px;
+}
+.outputContainer {
+    border-top: 1px dashed #ccc;
+}
+.text-center {
+    text-align: center;
+}
+.text-captilize {
+    text-transform: capitalize;
+}

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<!-- 
+    Last Name: Chandru, First Name : Jeyanth, UTA ID : 1001359339
+    Project Name : Project 2, Due Date : 26th October 2016
+-->
+<html lang="en">
+  <head>
+    <title>Web Mashup: Display Address with Weather Details</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css1.css">
+    <link rel="SHORTCUT ICON" href="icon1.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  </head>
+  <center>
+  <body>
+    <section id="floating-panel">
+      <form class="formContainer">
+        <fieldset>
+          <legend>Map and Weather</legend>
+          <div class="form-align">
+            <label class= "form-label displayInlineBlock" for="latlongclicked">Selected Latitude : </label>
+            <input class= "form-input displayInlineBlock" name="latlongclicked" id="latlongclicked" type="text"/><br/>
+          </div>
+          <div class="form-align">
+            <label class= "form-label displayInlineBlock" for="lotlongclicked">Selected Longitude : </label>
+            <input class= "form-input displayInlineBlock" name="lotlongclicked" id="lotlongclicked" type="text"/><br/>
+          </div>
+          <div class="form-align">
+            <label class= "form-label displayInlineBlock" for="latspan">Current Latitude : </label>
+            <input class= "form-input displayInlineBlock"  name="latspan" id="latspan" type="text" readonly="readonly"/><br/>
+          </div>
+          <div class="form-align">
+            <label class= "form-label displayInlineBlock" for="lngspan">Current Longitude : </label>
+            <input class= "form-input displayInlineBlock" name="lngspan" id="lngspan" type="text" readonly="readonly"/><br/>
+          </div>
+          <div class="text-center">
+            <input id="getWeatherInfo" type="button" class="displayInfo" value="Reverse Geocode">
+            <button class="displayInfo"><a href="index.html">Back</a></button>
+          </div>
+        </fieldset>
+      </form>
+      <div id="map" class="formContainer" style="width: 600px; height: 500px;"></div><br/>
+    </section>
+    <section>
+      <div id="output">&nbsp;</div>
+    </section>
+    <form>
+      <fieldset>
+        <legend>Clear Details</legend>
+        <div class="text-center">
+          <input type="button" id="clearHistory" class="displayInfo" onclick="clearFn()" value="Clear" />
+          <a href="#floating-panel"><input type="button" class="displayInfo" value="Top" /></a>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+  </center>
+  <script id="weatherOutput" type="text/x-handlebars-template">
+    <center>
+      <table class="displayWeather" cellpadding="5" cellspacing="1" width="400">
+        <caption>Weather Details for {{format_addr}}</caption>
+        <tr>
+          <td>
+            Temperature
+          </td>
+          <td>
+            {{temperature}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Wind Speed
+          </td>
+          <td>
+            {{windSpeed}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Clouds
+          </td>
+          <td>
+            <span class="text-capitalize">{{clouds}}</span>
+          </td>
+        </tr>
+      </table>
+    <hr/><br/>
+    </center>
+  </script>
+  <script type="text/javascript" src="webmash.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdH8XkWInZRbgaXfF__bvuSiJ8JMmqij8&callback=initMap" type="text/javascript"></script>
+</html>
+
